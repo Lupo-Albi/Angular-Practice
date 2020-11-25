@@ -7,13 +7,7 @@
     <title>Hello World</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
     <script src="todo.js"></script>
-    <link rel="stylesheet" href="todo.js">
-    <script>
-        angular.module("todoApp", []);
-        angular.module("todoApp").controller("helloWorldCtrl", function ($scope) {
-            $scope.message = "Hello World!";
-        });
-    </script>
+    <link rel="stylesheet" href="todo.css">
 </head>
 
 <body>
@@ -28,10 +22,10 @@
     </div>
 
     <h2>Todo</h2>
-    <div ng-controller="TodoListController as todoList">
+    <div ng-controller='TodoListController as todoList'>
         <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
         [ <a href="" ng-click="todoList.archive()">archive</a> ]
-        <ul class="unstyled">
+        <ul>
             <li ng-repeat="todo in todoList.todos">
                 <label class="checkbox">
                     <input type="checkbox" ng-model="todo.done">
